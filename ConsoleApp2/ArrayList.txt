@@ -1,0 +1,208 @@
+ ArrayList// Add Element
+
+https://elearnings.setecu.com/my/
+m1920-0078
+oak worry crane bar bullet once noise cannon couch stuff black world
+
+static void Main()
+        {
+            int n;
+            Console.Write("Enter  n= ");
+            n = int.Parse(Console.ReadLine());
+            List<int> arr = new List<int>();
+
+            for(int i = 0; i < n; i++)
+            {
+                Console.Write($"Enter arr[{i}] = ");
+                arr.Add(int.Parse(Console.ReadLine()));
+            }
+            int add;
+            Console.Write("Enter Number to Add= ");
+            add = int.Parse(Console.ReadLine());
+
+            for(int i = n; i < n + add; i++)
+            {
+                Console.Write($"Enter New Arry[{i}] = ");
+                arr.Add(int.Parse(Console.ReadLine()));
+            }
+
+            for (int i = 0; i < arr.Count; i++)
+            {
+                Console.WriteLine($"arr[{i}] = {arr[i]}");
+            }
+            Console.ReadKey();
+        }
+
+
+=======================================
+=======================================
+
+ArrayList// Remove by Index
+
+
+ static void Mainx()
+        {
+            int n;
+            Console.Write("Enter  n= ");
+            n = int.Parse(Console.ReadLine());
+            List<int> arr = new List<int>();
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write($"Enter arr[{i}] = ");
+                arr.Add(int.Parse(Console.ReadLine()));
+            }
+            int index;
+            do
+            {
+                Console.Write("Enter index to Remove = ");
+                index = int.Parse(Console.ReadLine());
+            } while (!(index >= 0 && index < arr.Count));
+
+            arr.RemoveAt(index);
+
+
+            for (int i = 0; i < arr.Count; i++)
+            {
+                Console.WriteLine($"arr[{i}] = {arr[i]}");
+            }
+            Console.ReadKey();
+        }
+
+=================================================
+================================================
+
+ArrayList// Remove by Value
+
+
+ static void Mainx()
+        {
+            int n;
+            Console.Write("Enter  n= ");
+            n = int.Parse(Console.ReadLine());
+            List<int> arr = new List<int>();
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write($"Enter arr[{i}] = ");
+                arr.Add(int.Parse(Console.ReadLine()));
+            }
+            int val;
+            Console.Write("Enter Value to Remove = ");
+            val = int.Parse(Console.ReadLine());
+            int count = 0;
+            while (arr.Remove(val)) { count++; }
+
+            if (count > 0)
+                Console.WriteLine($"Found {count} value(s) in Array");
+            else
+                Console.WriteLine($"Not Found in Array");
+            Console.ReadKey();
+        }
+
+
+========================================
+=========================================
+
+ArrayList Insert
+
+ static void Main()
+        {
+            int n;
+            Console.Write("Enter  n= ");
+            n = int.Parse(Console.ReadLine());
+            List<int> arr = new List<int>();
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write($"Enter arr[{i}] = ");
+                arr.Add(int.Parse(Console.ReadLine()));
+            }
+            int index, val;
+            do
+            {
+                Console.Write("Enter index to Insert = ");
+                index = int.Parse(Console.ReadLine());
+            } while (!(index >= 0 && index < arr.Count));
+            Console.Write("Enter Value to Insert = ");
+            val = int.Parse(Console.ReadLine());
+
+            arr.Insert(index, val);
+
+
+            for (int i = 0; i < arr.Count; i++)
+            {
+                Console.WriteLine($"arr[{i}] = {arr[i]}");
+            }
+            Console.ReadKey();
+        }
+    }
+
+========================================
+===========================================
+
+ArrayList / Random
+
+  static void Main()
+        {
+            int n;
+            Console.Write("Enter N= ");
+            n = int.Parse(Console.ReadLine());
+            List<int> a = new List<int>();
+            List<int> temp = new List<int>();
+
+            for (int i = 0; i < n; i++)
+                temp.Add(i);
+
+            Random r = new Random();
+            for(int i = 0; i < n; i++)
+            {
+                int index = r.Next(temp.Count);
+                a.Add(temp[index]);
+                temp.RemoveAt(index);
+                Console.WriteLine($"a[{i}] = {a[i]}");
+            }
+
+       
+
+            Console.ReadKey();
+        }
+
+
+===========================================
+==========================================
+
+ArrayList / Duplicate
+
+   static void Mainx()
+        {
+            int n;
+            Console.Write("Enter N= ");
+            n = int.Parse(Console.ReadLine());
+            List<int> a = new List<int>();
+
+            for(int i = 0; i < n; i++)
+            {
+            BACK: Console.Write($"Enter a[{i}]= ");
+                int temp = int.Parse(Console.ReadLine());
+
+                if (a.Contains(temp))
+                {
+                    goto BACK;
+                }
+
+                a.Add(temp);
+
+            }
+
+            for(int i = 0; i < a.Count; i++)
+            {
+                Console.WriteLine($"a[{i}] = {a[i]}");
+            }
+
+            Console.ReadKey();
+
+        }
+
+
+===============================================
+===============================================
+

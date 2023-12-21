@@ -1,0 +1,266 @@
+ipconfig /flushdns
+
+http://localhost/HTML2/wp-admin/
+
+
+ 1. Remove Element by Index
+
+  int n;
+            Console.Write("Enter n= ");
+            n = int.Parse(Console.ReadLine());
+            int[] a = new int[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write($"Enter a[{i}]= ");
+                a[i] = int.Parse(Console.ReadLine());
+            }
+            int index;
+            do
+            {
+                Console.Write("Enter index to remove= ");
+                index = int.Parse(Console.ReadLine());
+
+            } while (!(index >= 0 && index < n));
+
+            int[] temp = a;
+            a = new int[a.Length - 1];
+
+            for (int i = 0, j = 0; i < a.Length; i++)
+            {
+                if (i == index)
+                {
+                    continue;
+                }
+                    a[j] = temp[i];
+                    j++;
+                
+                
+            }
+
+            for (int i = 0; i < a.Length; i++)
+                Console.WriteLine($"a[{i}] = {a[i]}");
+            Console.ReadKey();
+
+----------------------------------------------------------------
+----------------------------------------------------------------
+----------------------------------------------------------------
+
+2. Remvoe Element by Value
+
+   int n;
+            Console.Write("Enter N=");
+            n = int.Parse(Console.ReadLine());
+            int[] a = new int[n];
+           for (int i = 0; i < a.Length; i++)
+            {
+                Console.WriteLine($"Enter a[{i}]=");
+                a[i] = int.Parse(Console.ReadLine());
+
+            }
+            int val;
+            Console.Write("Enter Value to Remove =");
+            val = int.Parse(Console.ReadLine());
+            int count = 0;
+
+            foreach(int value in a)
+            {
+                if(value == val)
+                {
+                    count++;
+                }
+           
+            }
+
+            if (count > 0)
+            {
+                Console.WriteLine($"Found {count} value(s) in Array");
+                int[] temp = a;
+                a = new int[a.Length - count];
+                for (int i = 0, j=0; i < temp.Length; i++)
+                {
+                    if(temp[i] == val)
+                    {
+                        continue;
+                    }
+                    a[j] = temp[i];
+                    j++;
+                }
+
+                Console.WriteLine();
+            }
+
+            else
+            {
+                Console.WriteLine("Not Found in Array");
+            }
+
+            Console.ReadKey();
+
+----------------------------------------------------------------
+----------------------------------------------------------------
+----------------------------------------------------------------
+
+3. Add Array
+
+    {
+        static void Main()
+        {
+            int n;
+            Console.Write("Enter number of element = ");
+            n = int.Parse(Console.ReadLine());
+            int[] a = new int[n];
+            for(int i = 0; i < a.Length; i++)
+            {
+                Console.Write($"Enter a[{i}] = ");
+                a[i] = int.Parse(Console.ReadLine());
+            }
+
+            int add;
+            Console.Write("Enter number of element to add = ");
+            add = int.Parse(Console.ReadLine());
+
+            int[] temp = a;
+            a = new int[a.Length + add];
+
+            for(int i = 0; i < temp.Length; i++)
+            {
+                a[i] = temp[i];
+            }
+            temp = null;
+--------------------------------------------------
+            int[] temp = a;
+            a = new int[a.Length + add];
+            Array.Copy(temp, a, temp.Length);
+            temp = null;
+--------------------------------------------------
+            Array.Resize(ref a, a.Lenght + add);
+
+              
+
+            for(int i = n; i < a.Length; i++)
+            {
+                Console.Write($"Enter new a[{i}] = ");
+                a[i] = int.Parse(Console.ReadLine());
+            }
+
+            for(int i = 0; i < a.Length; i++)
+            {
+                Console.WriteLine($"a[{i}] = {a[i]}");
+            }
+
+            Console.ReadKey();
+        }
+    }
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------
+
+4. Array Insert
+
+ static void Main()
+        {
+            int n;
+            Console.Write("Enter N= ");
+            n = int.Parse(Console.ReadLine());
+            int[] a = new int[n];
+
+            for(int i = 0; i < a.Length; i++)
+            {
+                Console.Write($"Enter a[{i}]");
+                a[i] = int.Parse(Console.ReadLine());
+
+            }
+
+            int index, val;
+            do
+            {
+                Console.Write("Enter to Index Insert= ");
+                index = int.Parse(Console.ReadLine());
+
+            } while (!(index >= 0 && index < a.Length));
+
+            Console.Write("Enter Value to Insert= ");
+            val=int.Parse(Console.ReadLine());
+
+            int[] temp = a;
+            a = new int[a.Length + 1];
+            a[index] = val;
+
+            for (int i = 0, j = 0; i < a.Length; i++){
+
+                if(i == index)
+                {
+                    continue;
+                }
+                a[i] = temp[j];
+                j++;
+            }
+            temp = null;
+
+            for (int i = 0; i < a.Length; i++)
+            {
+                Console.WriteLine($"a[{i}] = {a[i]}");
+            }
+
+
+
+            Console.ReadKey();
+        }
+
+
+---------------------------------------------------------------------
+--------------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+5. Array Duplicate
+
+static void Mainx()
+        {
+            int n;
+            Console.Write("Enter Num = ");
+            n = int.Parse(Console.ReadLine());
+            int[] a = new int[n];
+
+            for (int i = 0; i < a.Length; i++)
+            {
+
+                if (i == 0)
+                {
+
+                    Console.Write($"Enter a[{i}] = ");
+                    a[i] = int.Parse(Console.ReadLine());
+                }
+                else
+                {
+                    Console.Write($"Enter a[{i}] = ");
+                    int temp = int.Parse(Console.ReadLine());
+                    bool b = false;
+                    
+                    for (int j = 0; j < i; j++)
+                    {
+                        if (temp == a[j])
+                        {
+                            b = true;
+                            break;
+                        }
+                      
+                    }
+                    if (b)
+                    {
+                        i--;
+                        continue;
+                    }
+                    a[i] = temp;
+
+
+                }
+            }
+
+            for (int i = 0; i < a.Length; i++)
+            {
+                Console.WriteLine($"a[{i}] = {a[i]}");
+            }
+
+            Console.ReadKey();
+        }
